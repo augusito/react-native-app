@@ -1,5 +1,16 @@
 This project was bootstrapped with [react-native init](https://github.com/react-native-community/cli).
 
+
+<table>
+  <tr>
+    <td><img src="./screenshots/welcome.png" width="200"></td>
+    <td><img src="./screenshots/login.png" width="200"></td>
+    <td><img src="./screenshots/loginError.png" width="200"></td>
+    <td><img src="./screenshots/home.png" width="200"></td>
+  <tr>
+</table>
+
+
 ## Setting Up Development Environment ([React Native CLI, Windows + Android](https://facebook.github.io/react-native/docs/getting-started))
 
 Node.js (v10.16.0) - a JavaScript runtime built on Chrome's V8 JavaScript engine.
