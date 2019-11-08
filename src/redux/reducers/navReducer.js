@@ -1,8 +1,7 @@
-import {StatusBar} from 'react-native';
 import * as types from '../actions/types';
 import AppRouteConfigs from '../../app/AppRouteConfigs';
 
-const firstAction = AppRouteConfigs.router.getActionForPathAndParams('Welcome');
+const firstAction = AppRouteConfigs.router.getActionForPathAndParams('LogIn');
 const initialNavState = AppRouteConfigs.router.getStateForAction(firstAction);
 
 const createReducer = (initialState, handlers) => {

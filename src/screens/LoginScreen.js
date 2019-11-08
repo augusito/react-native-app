@@ -48,10 +48,10 @@ class LoginScreen extends React.Component {
         this.setState({ loadingVisible: true });
         const { logIn, navigation } = this.props;
         const { navigate } = navigation;
-
+        const { emailAddress, password } = this.state;
+        logIn(emailAddress, password);
         setTimeout(() => {
-            const { emailAddress, password } = this.state;
-            if (logIn(emailAddress, password)) {
+            if (this.props.loggedInStatus.loggedInState) {
                 this.setState({ formValid: true, loadingVisible: false });
                 navigate('Home');
             } else {
@@ -172,6 +172,7 @@ const mapDispatchToProps = dispatch => bindActionCreators(ActionCreators, dispat
 
 LoginScreen.propTypes = {
     logIn: PropTypes.func.isRequired,
+    loggedInStatus: PropTypes.object.isRequired,
     navigation: PropTypes.shape({
         navigate: PropTypes.func,
         goBack: PropTypes.func,
