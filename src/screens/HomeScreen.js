@@ -1,32 +1,43 @@
 import React from "react";
-import {View, Text, SafeAreaView, ScrollView} from "react-native";
-import NavBarButton from "../components/buttons/NavBarButton";
-import Icon from "react-native-vector-icons/index";
-import colors from "../styles/colors";
-import styles from './styles/Home';
-import transparentHeaderStyle from "../styles/navigation";
+import {StyleSheet, Text, View, Button} from "react-native";
+import colors from '../styles/colors';
+import transparentHeaderStyle from '../styles/navigation';
 
 class HomeScreen extends React.Component {
-    static navigationOptions = ({navigation}) => ({
-        headerLeft: null,
-        headerRight: <NavBarButton handleButtonPress={() =>
-            navigation.navigate('LogIn')
-        } location="right" color={colors.black} text="Logout"/>,
+    static navigationOptions = () => ({
+        headerLeft: <Text>Home</Text>,
         headerStyle: transparentHeaderStyle,
         headerTransparent: true,
-        headerTintColor: colors.black,
+        gesturesEnabled: false,
     });
+
     render() {
         return (
-            <View style={{flex: 1}}>
-                <ScrollView style={styles.wrapper}>
-                    <View style={styles.welcomeWrapper}>
-                        <Text style={styles.welcomeText}>Home</Text>
-                    </View>
-                </ScrollView>
+            <View style={styles.container}>
+                <View>
+                <Button
+                    color={colors.orange}
+                    onPress={() => this.props.navigation.navigate('MapOne')} title="Map One">
+                  </Button>
+                </View>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    textButton: {
+        fontSize: 16,
+        fontWeight: '600',
+        textAlign: 'left',
+        color: colors.white,
+    },
+});
 
 export default HomeScreen;

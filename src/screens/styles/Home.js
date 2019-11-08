@@ -27,6 +27,11 @@ const styles = StyleSheet.create({
         fontWeight: '300',
         marginBottom: 40,
     },
+
+    map: {
+        ...StyleSheet.absoluteFillObject,
+        bottom: 50,
+    },
 });
 
 export default styles;
